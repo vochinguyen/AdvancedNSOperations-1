@@ -16,4 +16,6 @@
  */
 @interface KADReachabilityCondition : NSObject <KADOperationCondition>
 
+-(instancetype)initWithHost:(NSURL *)host;
+
 @end

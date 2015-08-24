@@ -29,6 +29,11 @@
 		50E34C401B4423C4002DD412 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E34C3F1B4423C4002DD412 /* Images.xcassets */; };
 		50E34C431B4423C4002DD412 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E34C411B4423C4002DD412 /* LaunchScreen.xib */; };
 		50E34C4F1B4423C4002DD412 /* AdvancedNSOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E34C4E1B4423C4002DD412 /* AdvancedNSOperationTests.m */; };
+		BDBE233B1B8B49AC0094B971 /* DownloadEarthquakesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBE233A1B8B49AC0094B971 /* DownloadEarthquakesOperation.m */; };
+		BDBE233E1B8B4B0E0094B971 /* URLSessionTaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBE233D1B8B4B0E0094B971 /* URLSessionTaskOperation.m */; };
+		BDBE23431B8B534D0094B971 /* ReachabilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBE23421B8B534D0094B971 /* ReachabilityController.m */; };
+		BDBE23481B8B5D490094B971 /* NetworkObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBE23471B8B5D490094B971 /* NetworkObserver.m */; };
+		BDBE234B1B8B63760094B971 /* GetEarthquakesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBE234A1B8B63760094B971 /* GetEarthquakesOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +92,16 @@
 		50E34C481B4423C4002DD412 /* AdvancedNSOperationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedNSOperationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E34C4D1B4423C4002DD412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50E34C4E1B4423C4002DD412 /* AdvancedNSOperationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvancedNSOperationTests.m; sourceTree = "<group>"; };
+		BDBE23391B8B49AC0094B971 /* DownloadEarthquakesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadEarthquakesOperation.h; sourceTree = "<group>"; };
+		BDBE233A1B8B49AC0094B971 /* DownloadEarthquakesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadEarthquakesOperation.m; sourceTree = "<group>"; };
+		BDBE233C1B8B4B0E0094B971 /* URLSessionTaskOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLSessionTaskOperation.h; sourceTree = "<group>"; };
+		BDBE233D1B8B4B0E0094B971 /* URLSessionTaskOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLSessionTaskOperation.m; sourceTree = "<group>"; };
+		BDBE23411B8B534D0094B971 /* ReachabilityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityController.h; sourceTree = "<group>"; };
+		BDBE23421B8B534D0094B971 /* ReachabilityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityController.m; sourceTree = "<group>"; };
+		BDBE23461B8B5D490094B971 /* NetworkObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkObserver.h; sourceTree = "<group>"; };
+		BDBE23471B8B5D490094B971 /* NetworkObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkObserver.m; sourceTree = "<group>"; };
+		BDBE23491B8B63760094B971 /* GetEarthquakesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetEarthquakesOperation.h; sourceTree = "<group>"; };
+		BDBE234A1B8B63760094B971 /* GetEarthquakesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetEarthquakesOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +150,8 @@
 				50383B341B49518800FEB2B7 /* KADRemoteNotificationsCondition.m */,
 				50383B351B49518800FEB2B7 /* NSError+KADOperationErrors.h */,
 				50383B361B49518800FEB2B7 /* NSError+KADOperationErrors.m */,
+				BDBE23411B8B534D0094B971 /* ReachabilityController.h */,
+				BDBE23421B8B534D0094B971 /* ReachabilityController.m */,
 			);
 			name = Conditions;
 			path = Operations/Conditions;
@@ -174,6 +191,8 @@
 				50383B421B49518800FEB2B7 /* KADBlockOperation.m */,
 				50383B431B49518800FEB2B7 /* KADGroupOperation.h */,
 				50383B441B49518800FEB2B7 /* KADGroupOperation.m */,
+				BDBE233C1B8B4B0E0094B971 /* URLSessionTaskOperation.h */,
+				BDBE233D1B8B4B0E0094B971 /* URLSessionTaskOperation.m */,
 			);
 			name = Operations;
 			path = Operations/Operations;
@@ -242,6 +261,7 @@
 		50E34C581B4423D0002DD412 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				BDBE23381B8B49880094B971 /* AppOperations */,
 				50383B241B49518800FEB2B7 /* Categories */,
 				50383B291B49518800FEB2B7 /* Conditions */,
 				50383B371B49518800FEB2B7 /* Observers */,
@@ -249,6 +269,19 @@
 				50383B401B49518800FEB2B7 /* Operations */,
 			);
 			name = Operations;
+			sourceTree = "<group>";
+		};
+		BDBE23381B8B49880094B971 /* AppOperations */ = {
+			isa = PBXGroup;
+			children = (
+				BDBE23391B8B49AC0094B971 /* DownloadEarthquakesOperation.h */,
+				BDBE233A1B8B49AC0094B971 /* DownloadEarthquakesOperation.m */,
+				BDBE23461B8B5D490094B971 /* NetworkObserver.h */,
+				BDBE23471B8B5D490094B971 /* NetworkObserver.m */,
+				BDBE23491B8B63760094B971 /* GetEarthquakesOperation.h */,
+				BDBE234A1B8B63760094B971 /* GetEarthquakesOperation.m */,
+			);
+			path = AppOperations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,16 +392,21 @@
 				50383B501B49518800FEB2B7 /* KADExclusivityController.m in Sources */,
 				50383B4D1B49518800FEB2B7 /* KADRemoteNotificationsCondition.m in Sources */,
 				50383B541B49518800FEB2B7 /* KADOperation.m in Sources */,
+				BDBE234B1B8B63760094B971 /* GetEarthquakesOperation.m in Sources */,
 				50383B571B49713500FEB2B7 /* KADBackgroundObserver.m in Sources */,
 				50383B521B49518800FEB2B7 /* KADBlockOperation.m in Sources */,
+				BDBE233B1B8B49AC0094B971 /* DownloadEarthquakesOperation.m in Sources */,
 				50E34C351B4423C4002DD412 /* main.m in Sources */,
 				50383B511B49518800FEB2B7 /* KADOperationQueue.m in Sources */,
 				50383B471B49518800FEB2B7 /* CKContainer+Operations.m in Sources */,
 				50383B4F1B49518800FEB2B7 /* KADBlockObserver.m in Sources */,
 				50383B531B49518800FEB2B7 /* KADGroupOperation.m in Sources */,
+				BDBE23431B8B534D0094B971 /* ReachabilityController.m in Sources */,
 				50383B491B49518800FEB2B7 /* KADCloudKitCondition.m in Sources */,
+				BDBE23481B8B5D490094B971 /* NetworkObserver.m in Sources */,
 				50383B4B1B49518800FEB2B7 /* KADOperationConditionResult.m in Sources */,
 				50383B4E1B49518800FEB2B7 /* NSError+KADOperationErrors.m in Sources */,
+				BDBE233E1B8B4B0E0094B971 /* URLSessionTaskOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

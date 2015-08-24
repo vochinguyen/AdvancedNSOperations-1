@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "KADOperationQueue.h"
+#import "GetEarthquakesOperation.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) KADOperationQueue *operationQueue;
 
 @end
 
@@ -16,7 +20,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    _operationQueue = [[KADOperationQueue alloc] init];
+    
+    GetEarthquakesOperation *getEarthquakesOperation = [[GetEarthquakesOperation alloc] initWithContext:nil completionHandler:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"getEarthquakesOperation - completionHandler");
+        });
+    }];
+    
+    getEarthquakesOperation.userInitiated = YES;
+    [_operationQueue addOperation:getEarthquakesOperation];
 }
 
 - (void)didReceiveMemoryWarning {
