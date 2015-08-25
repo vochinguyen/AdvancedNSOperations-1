@@ -39,7 +39,6 @@
 //        NSLog(@"parseOperation");
 //    }];
 //    [parseOperation addDependency:_downloadOperation];
-    [finishOperation addDependency:_downloadOperation];
     
     self = [super initWithOperations:@[_downloadOperation, finishOperation]];
     

@@ -42,26 +42,33 @@
     NSString *host = [url host];
     if (host) {
         dispatch_async(_reachabilityQueue, ^{
-            id ref = self.reachabilityRefs[host];
+            SCNetworkReachabilityRef ref = (__bridge SCNetworkReachabilityRef)self.reachabilityRefs[host];
             
             if (ref == nil) {
                 NSString *hostString = host;
-                ref = (__bridge id)(SCNetworkReachabilityCreateWithName(nil, [hostString UTF8String]));
+                ref = (SCNetworkReachabilityCreateWithName(nil, [hostString UTF8String]));
             }
             
             if (ref) {
-                self.reachabilityRefs[host] = ref;
+                self.reachabilityRefs[host] = (__bridge id)(ref);
                 
                 BOOL reachable = false;
-                SCNetworkReachabilityFlags flags = 0;
-                if (SCNetworkReachabilityGetFlags((__bridge SCNetworkReachabilityRef)(ref), &flags) != 0) {
+                SCNetworkReachabilityFlags flags;
+                SCNetworkReachabilityGetFlags(ref, &flags);
+                if (((flags & kSCNetworkReachabilityFlagsReachable) != 0)) {
                     /*
                      Note that this is a very basic "is reachable" check.
                      Your app may choose to allow for other considerations,
                      such as whether or not the connection would require
                      VPN, a cellular connection, etc.
                      */
-                    reachable = flags & kSCNetworkFlagsReachable;
+                    BOOL isReachable = ((flags & kSCNetworkReachabilityFlagsReachable) != 0);
+                    BOOL needsConnection = ((flags & kSCNetworkReachabilityFlagsConnectionRequired) != 0);
+                    BOOL canConnectionAutomatically = (((flags & kSCNetworkReachabilityFlagsConnectionOnDemand ) != 0) || ((flags & kSCNetworkReachabilityFlagsConnectionOnTraffic) != 0));
+                    BOOL canConnectWithoutUserInteraction = (canConnectionAutomatically && (flags & kSCNetworkReachabilityFlagsInterventionRequired) == 0);
+                    BOOL isNetworkReachable = (isReachable && (!needsConnection || canConnectWithoutUserInteraction));
+                    
+                    reachable = isNetworkReachable;
                 }
                 completionHandler(reachable);
             }
