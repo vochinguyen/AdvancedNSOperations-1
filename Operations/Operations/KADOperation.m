@@ -141,8 +141,14 @@
 }
 
 #pragma mark - Execution and Cancellation
+
 -(void)start
 {
+    if (self.isCancelled) {
+        [self cancel];
+        return;
+    }
+    
     NSAssert(self.state == KADReady, @"This operation must be performed on an operation queue.");
     self.state = KADExecuting;
     
