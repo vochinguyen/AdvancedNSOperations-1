@@ -81,7 +81,7 @@
 }
 -(BOOL)isFinished
 {
-    return self.state == KADFinished;
+    return self.state == KADFinished || self.state == KADCancelled;
 }
 -(BOOL)isCancelled
 {
